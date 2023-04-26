@@ -2,7 +2,7 @@ resource "aws_security_group" "sg" {
   name = var.sg_name
   description = var.description
   vpc_id = var.vpc_id
-}
+
 dynamic "ingress" {
     for_each = var.sg_db_ingress
     content {
@@ -22,4 +22,5 @@ dynamic "egress" {
         security_groups = var.sg_source
         self = egress.value.self
     }
+}
 }

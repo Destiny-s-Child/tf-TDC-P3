@@ -1,7 +1,7 @@
 variable "default_tags" {
   type = map(string)
   default = {
-    "env" = "TDC-P3"
+    "env" = "tdc-p3"
   }
   description = "TDC Variables"
 }
@@ -30,7 +30,7 @@ variable "sg_db_ingress" {
     self = bool
   }))
   default = {
-    "aurora-mysql" = {
+    "mysql" = {
       port = 3306
       protocol = "tcp"
       self = true
